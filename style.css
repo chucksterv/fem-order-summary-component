@@ -1,0 +1,187 @@
+:root {
+  --clr-primary-200: hsl(225, 100%, 94%);
+  --clr-primary-400: hsl(245, 75%, 52%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(225, 100%, 98%);
+  --clr-neutral-400: hsl(224, 23%, 55%);
+  --clr-neutral-600: hsl(223, 47%, 23%);
+
+  --fs-regular: 1rem;
+  --fs-heading: 1.375rem;
+  --fs-button: 0.95rem;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-bolder: 900;
+
+  --ff-default: "Red Hat Display", sans-serif;
+}
+
+/* CSS Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Remove styling on unordered lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* General Styling */
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-primary-200);
+
+  font-family: var(--ff-default);
+  font-size: var(--fw-regular);
+  font-weight: var(--fw-regular);
+}
+
+p {
+  color: var(--clr-neutral-400);
+}
+
+/* Card Styling */
+.card {
+  display: grid;
+  justify-content: center;
+  background-color: var(--clr-neutral-100);
+  margin: 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__content {
+  display: grid;
+  padding: 1.5rem;
+  row-gap: 1.5rem;
+}
+
+.card__heading {
+  text-align: center;
+  font-weight: var(--fw-bolder);
+  font-size: var(--fs-heading);
+  color: var(--clr-neutral-600);
+}
+
+/* Price Section Styling */
+.card__plan {
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-neutral-200);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  column-gap: 1rem;
+}
+
+.annual-plan {
+  color: var(--clr-neutral-600);
+  font-weight: var(--fw-bolder);
+}
+
+/* Change Button */
+.card__plan__change {
+  color: var(--clr-primary-400);
+  text-decoration: underline;
+  font-size: 0.785rem;
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-weight: var(--fw-bold);
+  border-radius: 0.75rem;
+  font-size: var(--fs-button);
+}
+
+.card__payment {
+  border: none;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  padding: 0.8rem;
+  border-radius: 0.75rem;
+}
+
+.card__cancel-payment {
+  background: none;
+  border: none;
+  color: var(--clr-neutral-400);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
